@@ -1,0 +1,13 @@
+services:
+  new-york-connections:
+    container_name: new-york-connections
+    image: node:18-alpine
+    volumes:
+        - ./new-york-connections:/usr/src/app
+        #- ./.env:/usr/src/app/../.env
+    command: ["sh", "-c", "npm install && node app.js"]
+#    depends_on:
+#      - db_postgres  # Ensure the database starts first
+#    environment:
+#      - DATABASE_URL=postgresql://user:password@db:5432/mydatabase
+    
